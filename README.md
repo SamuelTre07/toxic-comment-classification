@@ -36,7 +36,7 @@ The project utilizes Natural Language Processing (NLP) techniques, specifically 
 
 ## 3. Data
 
-The dataset used is from the **Kaggle Jigsaw Toxic Comment Classification Challenge**.
+The dataset used is from the **Kaggle Jigsaw Toxic Comment Classification Challenge**, and it consists of 150k+ Wikipedia comments.
 
 ### Instructions to download:
 1.  Go to the [Kaggle Competition Page](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data).
@@ -101,17 +101,29 @@ pip install en_core_web_sm-3.8.0-py3-none-any.whl
 ### A. Running Locally (Development)
 
 #### Preprocessing
-If you want to reproduce the preprocessing pipeline and generate the cleaned dataset, run `notebook.ipynb`.
+
+To reproduce the cleaned dataset, I provide a dedicated script: **`generate_cleaned_dataset.py`**.  
+
+**Steps:**
+
+1. **Download the Kaggle dataset**  
+   - Obtain the `jigsaw-toxic-comment-classification-challenge.zip` from Kaggle and place it in the `data/` folder.
+
+2. **Run the preprocessing script**:
+
+```bash
+python generate_cleaned_dataset.py
+```
 
 #### Training  
 If you want to reproduce the model training process:
 
 ```bash
-# Ensure data is in data/train.csv
+# Ensure data is in data/clean_toxic_comment_dataset.csv
 python train.py
 ```
 
-This will generate **`toxic_comment_prediction_model.pkl`**.
+This will generate **`toxic_comment_prediction_model.pkl`**. The **`thresholds.json`** are computed in the `notebook.py`.
 
 #### Running the Server  
 Start the FastAPI service:
@@ -134,6 +146,8 @@ python test.py
 The project includes a **Dockerfile** that installs system dependencies (NLTK data, SpaCy models) and serves the app.
 
 **Build the image:**
+
+Note that to do this, you should have **`en_core_web_sm-3.8.0-py3-none-any.whl`** in the working directory before building the image, or fremove the line in the `Dockerfile` and find a way to get it from the web in the `Dockerfile`. **`en_core_web_sm-3.8.0-py3-none-any.whl`** can be downloaded [here](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl).
 
 ```bash
 docker build -t toxic-comment-prediction .
