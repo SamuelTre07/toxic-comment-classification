@@ -107,7 +107,7 @@ To reproduce the cleaned dataset, I provide a dedicated script: **`generate_clea
 **Steps:**
 
 1. **Download the Kaggle dataset**  
-   - Obtain the `jigsaw-toxic-comment-classification-challenge.zip` from Kaggle and place it in the `data/` folder.
+   - Obtain the `jigsaw-toxic-comment-classification-challenge.zip` from Kaggle and place it in the `data/` folder which you would create.
 
 2. **Run the preprocessing script**:
 
