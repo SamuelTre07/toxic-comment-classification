@@ -100,7 +100,10 @@ pip install en_core_web_sm-3.8.0-py3-none-any.whl
 
 ### A. Running Locally (Development)
 
-#### Preprocessing & Training  
+#### Preprocessing
+If you want to reproduce the preprocessing pipeline and generate the cleaned dataset, run `notebook.ipynb`.
+
+#### Training  
 If you want to reproduce the model training process:
 
 ```bash
