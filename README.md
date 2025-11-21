@@ -25,7 +25,7 @@ The project utilizes Natural Language Processing (NLP) techniques, specifically 
 * **`train.py`**: Script to train the final pipeline on the full dataset and save the model artifact (`.pkl`).
 * **`predict.py`**: The deployment script using FastAPI. It loads the model and serves predictions via a REST API.
 * **`cleaning.py`**: A helper module containing the custom text preprocessing logic (cleaning regex, Spacy lemmatization, etc.) used by both training and inference.
-* **`contractions.py`**: A helper dictionary for expanding English contractions.
+* **`contractions.py`**: A helper dictionary for expanding English contractions. The dictionary was created by Dipanja Sarkar, author of Text Analytics With Python: A Practicioner's Guide to Natural Language Processing. The script was obtained from this [repository](https://github.com/dipanjanS/practical-machine-learning-with-python/blob/master/bonus%20content/nlp%20proven%20approach/contractions.py)
 * **`test.py`**: A simple script to send a request to the running service and verify predictions.
 * **`Dockerfile`**: Configuration for containerizing the application.
 * **`pyproject.toml` / `uv.lock`**: Dependency management files (using `uv`).
@@ -123,7 +123,7 @@ If you want to reproduce the model training process:
 python train.py
 ```
 
-This will generate **`toxic_comment_prediction_model.pkl`**. The **`thresholds.json`** are computed in the `notebook.py`.
+This will generate **`toxic_comment_prediction_model.pkl`**. The **`thresholds.json`** are computed in the `notebook.ipynb`.
 
 #### Running the Server  
 Start the FastAPI service:
