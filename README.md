@@ -147,7 +147,7 @@ The project includes a **Dockerfile** that installs system dependencies (NLTK da
 
 **Build the image:**
 
-Note that to do this, you should have **`en_core_web_sm-3.8.0-py3-none-any.whl`** in the working directory before building the image, or remove the file name from the files to be copied in the `Dockerfile` and find a way to get it from the web in the `Dockerfile`. **`en_core_web_sm-3.8.0-py3-none-any.whl`** can be downloaded [here](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl).
+Note that to do this, you should have **`en_core_web_sm-3.8.0-py3-none-any.whl`** in the working directory before building the image, or remove the file name from the files to be copied into the container in the `Dockerfile` and find a way to get it from the web into the container through the `Dockerfile`. **`en_core_web_sm-3.8.0-py3-none-any.whl`** can be downloaded [here](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl).
 
 ```bash
 docker build -t toxic-comment-prediction .
