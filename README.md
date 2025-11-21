@@ -25,7 +25,7 @@ The project utilizes Natural Language Processing (NLP) techniques, specifically 
 * **`train.py`**: Script to train the final pipeline on the full dataset and save the model artifact (`.pkl`).
 * **`predict.py`**: The deployment script using FastAPI. It loads the model and serves predictions via a REST API.
 * **`cleaning.py`**: A helper module containing the custom text preprocessing logic (cleaning regex, Spacy lemmatization, etc.) used by both training and inference.
-* **`contractions.py`**: A helper dictionary for expanding English contractions. The dictionary was created by Dipanja Sarkar, author of Text Analytics With Python: A Practicioner's Guide to Natural Language Processing. The script was obtained from this [repository](https://github.com/dipanjanS/practical-machine-learning-with-python/blob/master/bonus%20content/nlp%20proven%20approach/contractions.py)
+* **`contractions.py`**: A helper dictionary for expanding English contractions. The dictionary was created by Dipanja Sarkar, author of Text Analytics With Python: A Practicioner's Guide to Natural Language Processing. The script was obtained from this [repository](https://github.com/dipanjanS/practical-machine-learning-with-python/blob/master/bonus%20content/nlp%20proven%20approach/contractions.py).
 * **`test.py`**: A simple script to send a request to the running service and verify predictions.
 * **`Dockerfile`**: Configuration for containerizing the application.
 * **`pyproject.toml` / `uv.lock`**: Dependency management files (using `uv`).
@@ -147,7 +147,7 @@ The project includes a **Dockerfile** that installs system dependencies (NLTK da
 
 **Build the image:**
 
-Note that to do this, you should have **`en_core_web_sm-3.8.0-py3-none-any.whl`** in the working directory before building the image, or fremove the line in the `Dockerfile` and find a way to get it from the web in the `Dockerfile`. **`en_core_web_sm-3.8.0-py3-none-any.whl`** can be downloaded [here](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl).
+Note that to do this, you should have **`en_core_web_sm-3.8.0-py3-none-any.whl`** in the working directory before building the image, or remove the file name from the files to be copied in the `Dockerfile` and find a way to get it from the web in the `Dockerfile`. **`en_core_web_sm-3.8.0-py3-none-any.whl`** can be downloaded [here](https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl).
 
 ```bash
 docker build -t toxic-comment-prediction .
